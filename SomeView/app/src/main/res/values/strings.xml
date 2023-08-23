@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">SomeView</string>
-    <string-array name="estado_civil">
-        <item>Solteiro</item>
-        <item>Casado</item>
-    </string-array>
-</resources>
