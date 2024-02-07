@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding amb;
 
     private int contador = 0;
+    private int add = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,11 @@ public class MainActivity extends AppCompatActivity {
         amb.inicialSp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                contador = position * 5;
+                if(position == 0) {
+                    add = 1;
+                } else {
+                    add = position * 5;
+                }
             }
 
             @Override
@@ -39,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         amb.cliqueBt.setOnClickListener(
-                v -> amb.contadorTv.setText(String.valueOf(++contador))
+                v -> amb.contadorTv.setText(String.valueOf(contador = contador + add))
         );
     }
 }
